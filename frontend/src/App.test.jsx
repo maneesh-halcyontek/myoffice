@@ -1,18 +1,28 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
 import App from './App';
+
+// Mock fetch to prevent the ECONNREFUSED error
+global.fetch = vi.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({ message: "Welcome to Home Page" }),
+  })
+);
 
 describe('App Component', () => {
   it('renders the Header and the Home page content', async () => {
     render(<App />);
     
-    // Check if "My Office" (from your Header) is visible
-    const headerElement = screen.getByText(/My Office/i);
-    expect(headerElement).toBeInTheDocument();
+    // 1. Target the Header specifically using its role "banner"
+    const header = screen.getByRole('banner');
+    
+    // 2. Use 'within' to only look for "My Office" inside that header
+    const headerLogo = within(header).getByText(/My Office/i);
+    expect(headerLogo).toBeInTheDocument();
 
-    // Check if the Home page content is visible
-    // (Assuming your Home.jsx has the text "Welcome to Home Page")
-    const homeElement = screen.getByText(/Welcome to Home Page/i);
-    expect(homeElement).toBeInTheDocument();
+    // 3. Target the Home page content
+    // This looks for your <h1> or similar heading in the Home component
+    const homeTitle = screen.getByText(/Home Page/i);
+    expect(homeTitle).toBeInTheDocument();
   });
 });
