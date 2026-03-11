@@ -1,0 +1,14 @@
+# Node dependencies
+**/node_modules/
+frontend/dist/
+frontend/build/
+
+# Python dependencies
+**/__pycache__/
+*.pyc
+venv/
+.env
+
+# Logs and OS files
+*.log
+.DS_Store
