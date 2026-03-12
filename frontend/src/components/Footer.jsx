@@ -25,7 +25,7 @@ const Footer = () => {
       <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 1 }}>
         {'Copyright © '}
         <Link color="inherit" href="https://yourdomain.com/">
-          My Office
+          My Office 
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}
