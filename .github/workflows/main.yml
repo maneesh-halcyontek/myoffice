@@ -1,4 +1,4 @@
-name: PredictPod CI Pipeline
+name: MyOffice CI/CD Pipeline
 
 on:
   push:

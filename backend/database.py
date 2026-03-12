@@ -3,22 +3,20 @@ import urllib.parse
 from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 
-# Load the variables from .env
 load_dotenv()
 
-# Fetch raw values
-user = os.getenv("MONGO_USER")
-password = os.getenv("MONGO_PASS")
-host = os.getenv("MONGO_HOST")
-port = os.getenv("MONGO_PORT")
-db_name = os.getenv("MONGO_DB")
-auth_source = os.getenv("MONGO_AUTH_SOURCE")
+# Add empty string fallbacks "" to prevent NoneType errors
+user = os.getenv("MONGO_USER") or ""
+password = os.getenv("MONGO_PASS") or ""
+host = os.getenv("MONGO_HOST") or "127.0.0.1"
+port = os.getenv("MONGO_PORT") or "27017"
+db_name = os.getenv("MONGO_DB") or "test_db"
+auth_source = os.getenv("MONGO_AUTH_SOURCE") or "admin"
 
-# URL encode the credentials (especially for that '@' symbol)
 safe_user = urllib.parse.quote_plus(user)
 safe_password = urllib.parse.quote_plus(password)
 
-# Construct URI
+# Only attempt to create the client if we have a user/pass (or handle the URI)
 uri = f"mongodb://{safe_user}:{safe_password}@{host}:{port}/{db_name}?authSource={auth_source}"
 
 client = AsyncIOMotorClient(uri)
