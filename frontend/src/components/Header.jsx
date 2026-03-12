@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import AssessmentIcon from '@mui/icons-material/Assessment';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#1976d2', width: '100%' }}>
@@ -29,8 +29,8 @@ const Header = () => {
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: 'flex' }}>
-          <Button sx={{ my: 2, color: 'white', display: 'block' }}>Dashboard</Button>
-          <Button sx={{ my: 2, color: 'white', display: 'block' }}>Archives</Button>
+          <Button sx={{ my: 2, color: 'white', display: 'block' }}><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}> Home </Link></Button>
+          <Button sx={{ my: 2, color: 'white', display: 'block' }}><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link></Button>
         </Box>
 
         <Box sx={{ flexGrow: 0 }}>
