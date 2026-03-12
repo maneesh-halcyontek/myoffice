@@ -31,6 +31,7 @@ const Header = () => {
         <Box sx={{ flexGrow: 1, display: 'flex' }}>
           <Button sx={{ my: 2, color: 'white', display: 'block' }}><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}> Home </Link></Button>
           <Button sx={{ my: 2, color: 'white', display: 'block' }}><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link></Button>
+          <Button sx={{ my: 2, color: 'white', display: 'block' }}><Link to="/job-application" style={{ textDecoration: 'none', color: 'inherit' }}>Apply for Job</Link></Button>
         </Box>
 
         <Box sx={{ flexGrow: 0 }}>

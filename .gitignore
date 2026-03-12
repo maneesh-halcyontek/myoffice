@@ -2,6 +2,7 @@
 **/node_modules/
 frontend/dist/
 frontend/build/
+.env
 
 # Python dependencies
 **/__pycache__/
@@ -9,6 +10,16 @@ frontend/build/
 venv/
 .env
 
+# Database
+# If you ever use a local SQLite or similar
+*.sqlite3
+
 # Logs and OS files
 *.log
 .DS_Store
+
+# --- NEW SECTION: Application Uploads ---
+# Ignore all files in the uploads folder
+backend/uploads/**
+# Except the .gitkeep file, so the folder structure is preserved on GitHub
+!backend/uploads/**/.gitkeep

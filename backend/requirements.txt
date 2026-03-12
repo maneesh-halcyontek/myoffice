@@ -2,3 +2,7 @@ fastapi
 uvicorn[standard]
 pytest
 httpx
+motor
+pydantic 
+dnspython
+python-multipart
