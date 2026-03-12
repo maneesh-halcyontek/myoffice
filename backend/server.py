@@ -61,7 +61,7 @@ async def apply_for_job(
             "resumePath": file_path,
             "status": "pending"
         }
-
+asdasd
         collection = get_applications_collection()  
         # 5. Insert into MongoDB 'myoffice' database
         result = await collection.insert_one(application_data)
