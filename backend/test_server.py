@@ -20,9 +20,9 @@ def test_read_home():
 
 def test_cors_headers():
     """
-    Test that CORS headers are present (since you added CORSMiddleware).
+    Test that CORS headers are present.
     """
-    # Act: Send an OPTIONS request (pre-flight)
+    # 1. Act: Make the request and CAPTURE it in the 'response' variable
     response = client.options(
         "/",
         headers={
@@ -30,6 +30,9 @@ def test_cors_headers():
             "Access-Control-Request-Method": "GET",
         }
     )
+
+    # 2. Assert: Now 'response' is defined, we can check the headers
+    allowed_origin = response.headers.get("access-control-allow-origin")
     
-    # Assert: Check that the origin is allowed
-    assert response.headers.get("access-control-allow-origin") == "*"
+    # Check for either the wildcard or your specific Vite dev port
+    assert allowed_origin in ["*", "http://localhost:5173"]

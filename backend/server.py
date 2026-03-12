@@ -1,9 +1,8 @@
 import os
 import shutil
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from database import application_collection # Assuming your DB setup from earlier
 from fastapi.middleware.cors import CORSMiddleware
-
+from database import get_applications_collection
 app = FastAPI()
 # Allow CORS for all origins (you can restrict this in production)
 # This tells FastAPI to allow requests from your React dev server
