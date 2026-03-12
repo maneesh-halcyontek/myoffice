@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Apply from './pages/Apply'
+import AddUser from './pages/AddUser'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<div>About Page</div>} />
         <Route path="/job-application" element={<Apply/>} />
+        <Route path='/user-add' element={<AddUser/> } ></Route>
       </Routes>
       <Footer/>
     </Router>

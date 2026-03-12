@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* Animations */
+@keyframes menuFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dropdown Container */
+.hr-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+  border: 1px solid #e8eef8;
+  min-width: 220px;
+  z-index: 1300;
+  overflow: hidden;
+  animation: menuFade .17s ease forwards;
+}
+
+/* Section Headings (Staff/Applicants) */
+.hr-section-head {
+  padding: 7px 18px 5px;
+  font-size: 0.63rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  background: #f8faff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Main Rows */
+.hr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 18px;
+  font-size: 0.86rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  color: #1e293b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background .15s, color .15s;
+}
+
+.hr-row.active {
+  background: #eef4ff;
+  color: #1a6fd4;
+}
+
+.hr-row:hover {
+  background: #f0f6ff !important;
+  color: #1a6fd4 !important;
+}
+
+/* Sub-Panels and Sub-Rows */
+.hr-sub-panel {
+  background: #f8faff;
+  border-top: 1px solid #eef2f9;
+  overflow: hidden;
+  animation: subSlide .18s ease forwards;
+}
+
+.sub-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 18px 10px 36px;
+  font-size: 0.84rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  color: #334155;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background .15s, color .15s;
+  text-decoration: none;
+}
+
+.sub-row:hover {
+  background: #e8f0fc !important;
+  color: #1a6fd4 !important;
+}
+
+/* Global Nav Button adjustments */
+.nav-btn {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}

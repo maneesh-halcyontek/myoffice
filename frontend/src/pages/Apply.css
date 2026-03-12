@@ -132,7 +132,7 @@
 /* ── SUBMIT BUTTON ── */
 .submit-btn {
   width: 100%;
-  padding: 16px 0;
+  padding: 16px 10px;
   background: #1a6fd4;
   border: none;
   border-radius: 10px;
