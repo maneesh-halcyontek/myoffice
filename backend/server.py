@@ -45,7 +45,7 @@ async def apply_for_job(
 
     # 2. Construct the file path
     # Pro-tip: Adding the email or timestamp to the filename prevents overwriting
-    file_path = os.path.join(UPLOAD_DIR, "resumes", f"{email}_{resume.filename}")
+    file_path = os.path.join(UPLOAD_DIR, "resumes", f"{email}_resume")
     
     try:
         # 3. Save the file to uploads/resumes
@@ -62,8 +62,9 @@ async def apply_for_job(
             "status": "pending"
         }
 
+        collection = get_applications_collection()  
         # 5. Insert into MongoDB 'myoffice' database
-        result = await application_collection.insert_one(application_data)
+        result = await collection.insert_one(application_data)
         
         return {
             "message": "Application submitted successfully",
