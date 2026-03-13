@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import './Home.css';
+import './css/Home.css';
 
 const Home = () => {
   const [message, setMessage] = useState('');

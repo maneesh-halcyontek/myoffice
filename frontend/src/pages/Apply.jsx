@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import './Apply.css'; // Import your new CSS file
+import './css/Apply.css'; // Import your new CSS file
 
 const Apply = () => {
   const [formData, setFormData] = useState({ fullName: '', email: '', position: '', coverLetter: '' });
