@@ -119,5 +119,5 @@ const Home = () => {
     </div>
   );
 };
-
+// Comment: This page is mostly static content with some simple animations and a fetch call to display a message from the backend. The CSS handles the layout and styling, while the React component manages state for the animated stats and the fetched message.
 export default Home;
