@@ -22,6 +22,6 @@ def get_database():
     return client[db_name]
 
 # This is now a function call inside your routes
-def get_applications_collection():
+def get_applications_collection(collection_name="applications"):
     db = get_database()
-    return db.get_collection("applications")
+    return db.get_collection(collection_name)

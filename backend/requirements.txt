@@ -6,3 +6,5 @@ motor
 pydantic 
 dnspython
 python-multipart
+bcrypt
+python-jose[cryptography]

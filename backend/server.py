@@ -3,7 +3,12 @@ import shutil
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from database import get_applications_collection
+from api.auth import router as auth_router
+
 app = FastAPI()
+
+# Include the auth router
+app.include_router(auth_router) 
 # Allow CORS for all origins (you can restrict this in production)
 # This tells FastAPI to allow requests from your React dev server
 origins = [
