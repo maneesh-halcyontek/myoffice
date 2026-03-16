@@ -1,0 +1,22 @@
+.login-error-banner {
+  background: #fff5f5;
+  border: 1.5px solid #fca5a5;
+  color: #ef4444;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.login-forgot {
+  font-size: 0.75rem;
+  color: #1a6fd4;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.login-forgot:hover {
+  text-decoration: underline;
+}

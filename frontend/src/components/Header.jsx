@@ -157,7 +157,9 @@ const Header = () => {
           borderColor: 'rgba(255,255,255,.4)', borderRadius: '8px', px: 2.5, fontWeight: 600,
           '&:hover': { borderColor: '#fff', background: 'rgba(255,255,255,.1)' },
         }}>
+          <Link to="/login" style={{ color: 'inherit', textDecoration: 'none' }}>
           Login
+        </Link>
         </Button>
       </Toolbar>
     </AppBar>
